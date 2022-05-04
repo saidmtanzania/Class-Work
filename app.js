@@ -75,7 +75,7 @@ const server = http.createServer((req,res)=>{
         <div class="card text-black" style="border-radius: 25px;">
         <div class="card-body p-md-5">
         <div class="row justify-content-center">
-        <div class="col-md-10 col-lg-6 col-xl-10 order-2 order-lg-1">
+        <div class="col-md-12 col-lg-12 col-xl-12 order-2 order-lg-1">
         <a href="/">Add another</a>`);
         res.write('<p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Student entered</p>');
         res.write(`<p><strong>${printed}</strong></p>`);
