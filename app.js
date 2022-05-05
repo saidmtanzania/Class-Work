@@ -37,7 +37,8 @@ const server = http.createServer((req,res)=>{
          Surname: sname,
          Registration:regno,
          Course: course
-        };
+       };
+
       fs.writeFileSync('student.json', JSON.stringify(student),{'flag':'a'});
     });
     res.statusCode = 302;
@@ -67,8 +68,8 @@ const server = http.createServer((req,res)=>{
             rel="stylesheet"
           />
           <title>NodeJS</title>
-        </head>`);
-        res.write(`<body><section class="vh-100" style="background-color: #eee;">
+        </head>
+        <body><section class="vh-100" style="background-color: #eee;">
         <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
@@ -76,17 +77,16 @@ const server = http.createServer((req,res)=>{
         <div class="card-body p-md-5">
         <div class="row justify-content-center">
         <div class="col-md-12 col-lg-12 col-xl-12 order-2 order-lg-1">
-        <a href="/">Add another</a>`);
-        res.write('<p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Student entered</p>');
-        res.write(`<p><strong>${printed}</strong></p>`);
-        res.write(`</div></div></div></div></div></div></div></section>
-<!-- MDB -->
-<script
-type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
-</body>
-</html>
-`);
+        <a href="/">Add another</a>
+        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Student entered</p>
+        <p><strong>${[printed]}</strong></p>
+        </div></div></div></div></div></div></div></section>
+        <!-- MDB -->
+        <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
+        </body>
+        </html>`);
     res.end();
     });
   }
